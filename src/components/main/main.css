@@ -1,3 +1,52 @@
 .main {
-  flex: 0 0 80%;
+  flex: 0 0 78%;
+  margin-top: 15px;
+  background-color: #1d1d1d;
+  border-radius: 20px;
+  height: 96vh;
+}
+
+.login-section {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the end */
+  align-items: center !important; /* Center buttons vertically */
+  padding: 0 20px; /* Space from the right */
+  box-sizing: border-box;
+  gap: 5px;
+  background-color: #101010;
+  width: 100%;
+}
+button {
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  border: 2px solid black; /* Black border */
+  border-radius: 50px; /* Pill shape */
+  padding: 10px 20px; /* Medium size padding */
+  font-size: 18px; /* Medium size font */
+  font-family: Arial, sans-serif; /* Font family */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Center text */
+  display: inline-block; /* Inline-block for proper padding */
+  transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
+  margin-bottom: 1rem;
+  margin-top: 10px;
+}
+button:nth-child(1) {
+  background-color: #101010; /* White background */
+  margin-left: 0;
+  color: #B3B3B3; /* Black text */
+  border: 2px solid #101010; /* Black border */
+  border-radius: 50px; /* Pill shape */
+  padding: 10px 20px; /* Medium size padding */
+  font-size: 18px; /* Medium size font */
+  font-family: Arial, sans-serif; /* Font family */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Center text */
+  display: inline-block; /* Inline-block for proper padding */
+  transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
+  margin-bottom: 1rem;
+}
+button:hover {
+  background-color: black; /* Black background on hover */
+  color: white; /* White text on hover */
 }
