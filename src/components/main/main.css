@@ -15,6 +15,7 @@
   gap: 5px;
   background-color: #101010;
   width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 button {
   background-color: white; /* White background */
@@ -34,7 +35,7 @@ button {
 button:nth-child(1) {
   background-color: #101010; /* White background */
   margin-left: 0;
-  color: #B3B3B3; /* Black text */
+  color: #b3b3b3; /* Black text */
   border: 2px solid #101010; /* Black border */
   border-radius: 50px; /* Pill shape */
   padding: 10px 20px; /* Medium size padding */

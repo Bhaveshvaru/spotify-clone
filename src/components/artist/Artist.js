@@ -1,5 +1,6 @@
 import React from 'react'
 import './artist.css'
+import { FaCirclePlay } from 'react-icons/fa6'
 
 const Artist = () => {
   let artistData = [
@@ -48,6 +49,7 @@ const Artist = () => {
                 <img src={item.imgUrl} alt='artist' />
                 <p>{item.name}</p>
                 <p>artist</p>
+                <FaCirclePlay color='green'  className='hoverBtn'/>
               </div>
             </>
           ))}
