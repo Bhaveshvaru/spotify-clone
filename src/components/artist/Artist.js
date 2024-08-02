@@ -49,7 +49,7 @@ const Artist = () => {
                 <img src={item.imgUrl} alt='artist' />
                 <p>{item.name}</p>
                 <p>artist</p>
-                <FaCirclePlay color='green'  className='hoverBtn'/>
+                <FaCirclePlay color='green' className='hoverBtn' />
               </div>
             </>
           ))}

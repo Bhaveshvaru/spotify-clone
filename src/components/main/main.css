@@ -4,6 +4,7 @@
   background-color: #1d1d1d;
   border-radius: 20px;
   height: 96vh;
+  overflow: scroll;
 }
 
 .login-section {
