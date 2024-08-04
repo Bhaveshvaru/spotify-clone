@@ -28,8 +28,7 @@ h4 {
     width: 180px;
     height: 180px;
     object-fit: cover;
-    border-radius: 50%;
-    padding-left: 0.7rem;
+    margin-left: 0.7rem;
   }
   p {
     color: #ffffff;
