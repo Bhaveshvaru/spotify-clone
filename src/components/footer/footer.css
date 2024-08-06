@@ -12,11 +12,47 @@
   gap: 10px;
 }
 .ico {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
-    height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   background-color: #292929;
+}
+.links_ui {
+  text-decoration: none;
+  color: white;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #b3b3b3;
+}
+.links {
+  display: flex;
+  justify-items: center;
+  justify-content: space-evenly;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+.links_ui :nth-child(1) {
+  font-weight: bold;
+  color: white;
+  padding-bottom: 3px;
+}
+.links_ui :nth-child(1):hover {
+  text-decoration: none;
+  font-weight: normal;
+  cursor: default;
+  font-weight: bold;
+}
+.links_ui :hover {
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
 }
