@@ -52,7 +52,7 @@
 }
 .links_ui :hover {
   text-decoration: underline;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   color: white;
 }
