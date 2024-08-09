@@ -15,6 +15,7 @@ const SongSection = ({ data, bgStyle, title }) => {
             <>
               <div className='card'>
                 <img
+                className='card_img'
                   src={item.imgUrl}
                   alt='artist'
                   style={{ borderRadius: bgStyle }}

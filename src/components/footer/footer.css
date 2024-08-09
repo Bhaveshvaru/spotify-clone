@@ -1,15 +1,17 @@
 .footer_container {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
+  flex-wrap: wrap;
 }
 .icons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-top: 5px;
 }
 .ico {
   display: flex;
@@ -19,6 +21,7 @@
   height: 3rem;
   border-radius: 50%;
   background-color: #292929;
+  cursor: pointer;
 }
 .links_ui {
   text-decoration: none;
