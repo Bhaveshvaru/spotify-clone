@@ -1,0 +1,123 @@
+.music-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 12vh;
+}
+
+.music-section-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.song-img {
+  object-fit: cover;
+  border-radius: 10px;
+  height: 80px;
+  width: 80px;
+}
+.music-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.music-title p {
+  color: #ffffff;
+  font-size: 14px;
+  padding-left: 1rem;
+  margin: 0;
+  padding: 2px 0;
+  margin-left: 5px;
+  text-align: center;
+}
+.music-section-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.play-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: font-size 0.3s ease;
+}
+.music-icons {
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.music-icons:hover {
+  transform: scale(1.2);
+}
+.player-input {
+  color: white;
+}
+
+/* Style for the slider track */
+input[type='range'] {
+  -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+  width: 100%; /* Full width */
+  height: 8px; /* Track height */
+  background: #ddd; /* Default track background color */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove outline */
+}
+
+/* Style for the slider thumb */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default thumb styling in WebKit browsers */
+  width: 20px; /* Thumb width */
+  height: 20px; /* Thumb height */
+  background: #20d760; /* Thumb color */
+  border-radius: 50%; /* Round thumb */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-top: -6px; /* Align thumb with track */
+}
+
+/* Style for Firefox */
+input[type='range']::-moz-range-thumb {
+  width: 20px; /* Thumb width */
+  height: 20px; /* Thumb height */
+  background: #20d760; /* Thumb color */
+  border-radius: 50%; /* Round thumb */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Style for other browsers */
+input[type='range']::-ms-thumb {
+  width: 20px; /* Thumb width */
+  height: 20px; /* Thumb height */
+  background: #20d760; /* Thumb color */
+  border-radius: 50%; /* Round thumb */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Style for the track (WebKit only) */
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%; /* Full width */
+  height: 8px; /* Track height */
+  background: linear-gradient(
+    to right,
+    #20d760 0%,
+    #20d760 var(--slider-value),
+    #ddd var(--slider-value),
+    #ddd 100%
+  );
+  border-radius: 5px; /* Rounded corners */
+}
+
+.music-range {
+  flex: 3;
+}

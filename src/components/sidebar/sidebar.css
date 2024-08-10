@@ -1,3 +1,9 @@
+h3 {
+  color: white;
+}
+p {
+  color: white;
+}
 .side {
   flex: 0 0 20%;
 }
@@ -36,7 +42,7 @@
   align-items: start;
   border-radius: 20px;
   margin: 15px;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 
 .library {
@@ -45,9 +51,13 @@
   align-items: center;
   gap: 5px;
   margin-left: 1rem;
-  h3 {
-    color: white;
-  }
+}
+.library h3 {
+  color: white;
+}
+
+playlist p {
+  color: white;
 }
 
 .playlist {
@@ -55,9 +65,7 @@
   width: 90%;
   margin-left: 10px;
   border-radius: 10px;
-  p {
-    color: white;
-  }
+
   button {
     background-color: white; /* White background */
     color: black; /* Black text */
