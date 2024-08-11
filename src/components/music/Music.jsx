@@ -6,45 +6,74 @@ import { FaPlayCircle } from 'react-icons/fa'
 import { FaCirclePause } from 'react-icons/fa6'
 import { FaAngleDoubleRight } from 'react-icons/fa'
 import { MdOutlineReplayCircleFilled } from 'react-icons/md'
+import { LuMic2 } from 'react-icons/lu'
+import { CiSpeaker } from 'react-icons/ci'
+import { PiQueue } from 'react-icons/pi'
+import { MdOutlineOpenInFull } from 'react-icons/md'
+import { HiMiniSpeakerXMark } from 'react-icons/hi2'
+import { RxSpeakerQuiet } from 'react-icons/rx'
+import { RxSpeakerLoud } from 'react-icons/rx'
+import { HiSpeakerWave } from 'react-icons/hi2'
 
 const Music = () => {
   const sliderRef = useRef(null)
   const audioRef = useRef(null)
+  const volumeRef = useRef(null)
 
   const [pause, setPause] = useState(false)
-  const [volume, setVolume] = useState(60)
-  const handleVolumeChange = (e) => {
-    setVolume(e.target.value)
+  const [currentTime, setCurrentTime] = useState(0)
+
+  const [systemVolume, setSystemVolume] = useState(70)
+
+  const handleSliderChange = (e) => {
+    const newTime = (e.target.value / 100) * audioRef.current.duration
+    audioRef.current.currentTime = newTime
   }
+
   const pauseHandler = () => {
     audioRef.current.pause()
-    console.log(audioRef)
-    //currentTime
-    // duration
     setPause(false)
   }
+
   const playHandler = () => {
     audioRef.current.play()
     setPause(true)
   }
-  useEffect(() => {
-    const slider = sliderRef.current
 
-    function updateSlider() {
-      const value = slider.value
-      const max = slider.max
-      // Update the CSS variable to adjust the gradient
-      slider.style.setProperty('--slider-value', `${(value / max) * 100}%`)
+  useEffect(() => {
+    const updateSlider = () => {
+      const audio = audioRef.current
+      if (audio) {
+        setCurrentTime((audio.currentTime / audio.duration) * 100)
+      }
     }
 
-    slider.addEventListener('input', updateSlider)
-    updateSlider() // Initialize on load
+    const interval = setInterval(updateSlider, 1000)
 
-    // Clean up the event listener on component unmount
     return () => {
-      slider.removeEventListener('input', updateSlider)
+      clearInterval(interval)
     }
   }, [])
+
+  useEffect(() => {
+    const slider = sliderRef.current
+    if (slider) {
+      slider.style.setProperty('--slider-value', `${currentTime}%`)
+    }
+  }, [currentTime])
+
+  const handleVolumeChange = (e) => {
+    setSystemVolume(e.target.value / 100)
+    audioRef.current.volume = e.target.value / 100
+  }
+
+  useEffect(() => {
+    const slider = volumeRef.current
+    if (slider) {
+      slider.style.setProperty('--slider-value', `${systemVolume * 100}%`)
+    }
+  }, [systemVolume])
+
   return (
     <div className='music-container'>
       <div className='music-section-1'>
@@ -55,7 +84,7 @@ const Music = () => {
         />
         <div className='music-title'>
           <p>Sajni from Laapta Ladies</p>
-          <p>Ram sampath, Arijit singh</p>
+          <p>Ram Sampath, Arijit Singh</p>
         </div>
       </div>
       <div className='music-section-2'>
@@ -77,7 +106,6 @@ const Music = () => {
               className='music-icons'
             />
           )}
-
           <FaAngleDoubleRight color='white' size={30} className='music-icons' />
           <MdOutlineReplayCircleFilled
             color='white'
@@ -87,34 +115,43 @@ const Music = () => {
         </div>
 
         <div className='music-range'>
-          <input
-            id='volume-slider'
-            type='range'
-            min='0'
-            max='100'
-            value={volume}
-            onChange={handleVolumeChange}
-            style={{ width: '200%' }}
-            className='player-input'
-            ref={sliderRef}
-          />
-          <audio
-            src='https://mp3.chillhop.com/serve.php/?mp3=10075'
-            ref={audioRef}
-          ></audio>
+          <div>
+            <input
+              id='playback-slider'
+              type='range'
+              min='0'
+              max='100'
+              value={currentTime}
+              onChange={handleSliderChange}
+              style={{ width: '200%' }}
+              className='player-input'
+              ref={sliderRef}
+            />
+            <audio
+              src='https://www.pagalworld.com.sb/files/download/type/64/id/71229/1.mp3?1'
+              ref={audioRef}
+            ></audio>
+          </div>
         </div>
       </div>
-      {/* <div className='music-section-3'></div> */}
-      <div className='music-section-1'>
-        <img
-          src='https://i.ytimg.com/vi/k3g_WjLCsXM/maxresdefault.jpg'
-          alt='album'
-          className='song-img'
+      <div className='music-section-3'>
+        <LuMic2 color='white' size={30} className='vol-icons' />
+        <CiSpeaker color='white' size={30} className='vol-icons' />
+        <PiQueue color='white' size={30} className='vol-icons' />
+        <RxSpeakerLoud color='white' size={30} className='vol-icons' />
+
+        <input
+          id='volume-slider'
+          type='range'
+          min='0'
+          max='100'
+          value={systemVolume * 100}
+          onChange={handleVolumeChange}
+          style={{ width: '80%' }}
+          className='volume-input'
+          ref={volumeRef}
         />
-        <div className='music-title'>
-          <p>Sajni from Laapta Ladies</p>
-          <p>Ram sampath, Arijit singh</p>
-        </div>
+        <MdOutlineOpenInFull color='white' size={30} className='vol-icons' />
       </div>
     </div>
   )

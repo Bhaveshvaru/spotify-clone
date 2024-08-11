@@ -12,10 +12,10 @@ const SongSection = ({ data, bgStyle, title }) => {
       <div className='cardContainer'>
         {data &&
           data.map((item) => (
-            <>
+            <div key={item.id}>
               <div className='card'>
                 <img
-                className='card_img'
+                  className='card_img'
                   src={item.imgUrl}
                   alt='artist'
                   style={{ borderRadius: bgStyle }}
@@ -24,7 +24,7 @@ const SongSection = ({ data, bgStyle, title }) => {
                 <p>album</p>
                 <FaCirclePlay color='green' className='hoverBtn' />
               </div>
-            </>
+            </div>
           ))}
       </div>
     </div>
