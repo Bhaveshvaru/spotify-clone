@@ -41,6 +41,7 @@ const Music = () => {
   }
 
   useEffect(() => {
+    setCurrentTime(0)
     const updateSlider = () => {
       const audio = audioRef.current
       if (audio) {
